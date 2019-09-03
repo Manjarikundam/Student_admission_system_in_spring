@@ -33,21 +33,18 @@ public class UniadminDao extends StudentAdmissionApplication {
 		clgbean.getClgcode();
 		clgbean.getClgname();
 		clgbean.getAdminname();
-		System.out.println(clgbean.toString());
 		clgadmininterface.save(clgbean);
 
 		SubadBean subbean = new SubadBean();
 		subbean.setName(clgbean.getAdminname());
 		subbean.setPassword(clgbean.getClgcode() + clgbean.getClgname());
 		subbean.setClgcode(clgbean.getClgcode());
-		System.out.println(subbean.toString());
 		subadmininterface.save(subbean);
 
 		LoginBean loginbean = new LoginBean();
 		loginbean.setName(clgbean.getAdminname());
 		loginbean.setPassword(clgbean.getClgcode() + clgbean.getClgname());
 		loginbean.setRole("subadmin");
-		System.out.println(loginbean.toString());
 		logininterface.save(loginbean);
 		return "admin added successfully";
 	}
