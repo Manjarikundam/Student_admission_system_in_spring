@@ -19,9 +19,18 @@ border:none;
 #f2{
 width:400px;
 height:450px;
-background-color:lightgrey;
+background-color: rgb(84, 115, 117,0.6);
 }
 
+body {
+	padding-left: 700px;
+	padding-top: 50px;
+	padding-bottom: 90px;
+	background-image:
+		url("https://www.thoughtco.com/thmb/JBypVycd1rBteuuRf-qFkUO-jVQ=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/173253837-56a18f0c5f9b58b7d0c0a855.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 </style>
 </head>
 <body>

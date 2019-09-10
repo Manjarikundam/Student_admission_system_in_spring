@@ -1,4 +1,4 @@
-package com.example.demo.Interface;
+package com.student_admission.Interface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.Selected_studentsBean;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.Selected_studentsBean;
 
 public interface Selected_Interface extends JpaRepository<Selected_studentsBean, Integer>{
 

@@ -1,4 +1,4 @@
-package com.example.demo.DAO;
+package com.student_admission.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.StudentAdmissionApplication;
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.ClgadminBean;
-import com.example.demo.Bean.LoginBean;
-import com.example.demo.Bean.SubadBean;
-import com.example.demo.Interface.Application_Interface;
-import com.example.demo.Interface.Clgadmin_Interface;
-import com.example.demo.Interface.Login_Interface;
-import com.example.demo.Interface.Subadmin_Interface;
+import com.student_admission.StudentAdmissionApplication;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.ClgadminBean;
+import com.student_admission.Bean.LoginBean;
+import com.student_admission.Bean.SubadBean;
+import com.student_admission.Interface.Application_Interface;
+import com.student_admission.Interface.Clgadmin_Interface;
+import com.student_admission.Interface.Login_Interface;
+import com.student_admission.Interface.Subadmin_Interface;
 
 @EnableAutoConfiguration
 @Service
@@ -38,31 +38,35 @@ public class LoginDao extends StudentAdmissionApplication {
 	Login_Interface logininterface;
 
 	//This method is used to validate the User
-	public String check(LoginBean loginbean, ArrayList<LoginBean> loginbean1) {
+	public String check(LoginBean loginbean) {
 		String role = null;
 		String code = null;
 		String clg_name = null;
-		String name1 = loginbean1.get(0).getName();
-		for (int i = 0; i < loginbean1.size(); i++) {
-			if (loginbean1.get(i).getName().equals(null) || loginbean1.get(i).getPassword().equals(null)) {
+		LoginBean list =logininterface.findById(loginbean.getName()).get();
+		//String name1 = loginbean1.get(0).getName();
+	
+			if (list.getName().equals(null) || list.getPassword().equals(null)) {
 				role = "error";
 			}
-			if (loginbean1.get(i).getName().equals(loginbean.getName())
-					&& loginbean1.get(i).getPassword().equals(loginbean.getPassword())) {
-				if (loginbean1.get(i).getRole().equals("admin")) {
+			if (list.getName().equals(loginbean.getName())
+					&& list.getPassword().equals(loginbean.getPassword()))
+			{
+				if (list.getRole().equals("admin")) {
 					role = "admin";
-				} else if (loginbean1.get(i).getRole().equals("subadmin")) {
-					code = clgadmininterface.findByAdminname(loginbean1.get(i).getName()).getClgcode();
+				} else if (list.getRole().equals("subadmin")) {
+					code = clgadmininterface.findByAdminname(list.getName()).getClgcode();
 					role = "subadmin";
-				} else if (loginbean1.get(i).getRole().equals("user")) {
+				} else if (list.getRole().equals("user")) {
 					role = "user";
 				}
 
 			}
 
-		}
+		
 		return role + "," + code;
 	}
+	
+	
 
 	//This method is used to insert the User
 	public String insert(ApplicationBean applicationbean) {

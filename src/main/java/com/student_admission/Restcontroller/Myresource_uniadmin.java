@@ -1,4 +1,4 @@
-package com.example.demo.MyresourceRest;
+package com.student_admission.Restcontroller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Bean.ClgadminBean;
-import com.example.demo.DAO.UniadminDao;
-import com.example.demo.Interface.Clgadmin_Interface;
+import com.student_admission.Bean.ClgadminBean;
+import com.student_admission.Interface.Clgadmin_Interface;
+import com.student_admission.Repository.UniadminDao;
 
 @RestController
 @RequestMapping("/myresource_uni")

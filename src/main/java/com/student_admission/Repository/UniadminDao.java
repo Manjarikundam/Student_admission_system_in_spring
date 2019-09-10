@@ -1,4 +1,4 @@
-package com.example.demo.DAO;
+package com.student_admission.Repository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.StudentAdmissionApplication;
-import com.example.demo.Bean.ClgadminBean;
-import com.example.demo.Bean.LoginBean;
-import com.example.demo.Bean.SubadBean;
-import com.example.demo.Interface.Clgadmin_Interface;
-import com.example.demo.Interface.Login_Interface;
-import com.example.demo.Interface.Subadmin_Interface;
+import com.student_admission.StudentAdmissionApplication;
+import com.student_admission.Bean.ClgadminBean;
+import com.student_admission.Bean.LoginBean;
+import com.student_admission.Bean.SubadBean;
+import com.student_admission.Interface.Clgadmin_Interface;
+import com.student_admission.Interface.Login_Interface;
+import com.student_admission.Interface.Subadmin_Interface;
 
 @EnableAutoConfiguration
 @Service
@@ -33,18 +33,21 @@ public class UniadminDao extends StudentAdmissionApplication {
 		clgbean.getClgcode();
 		clgbean.getClgname();
 		clgbean.getAdminname();
+		System.out.println(clgbean.toString());
 		clgadmininterface.save(clgbean);
 
 		SubadBean subbean = new SubadBean();
 		subbean.setName(clgbean.getAdminname());
 		subbean.setPassword(clgbean.getClgcode() + clgbean.getClgname());
 		subbean.setClgcode(clgbean.getClgcode());
+		System.out.println(subbean.toString());
 		subadmininterface.save(subbean);
 
 		LoginBean loginbean = new LoginBean();
 		loginbean.setName(clgbean.getAdminname());
 		loginbean.setPassword(clgbean.getClgcode() + clgbean.getClgname());
 		loginbean.setRole("subadmin");
+		System.out.println(loginbean.toString());
 		logininterface.save(loginbean);
 		return "admin added successfully";
 	}

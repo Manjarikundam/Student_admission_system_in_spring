@@ -1,4 +1,4 @@
-package com.example.demo.DAO;
+package com.student_admission.Repository;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.StudentAdmissionApplication;
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.Selected_studentsBean;
-import com.example.demo.Interface.Application_Interface;
-import com.example.demo.Interface.Clgadmin_Interface;
-import com.example.demo.Interface.Selected_Interface;
+import com.student_admission.StudentAdmissionApplication;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.Selected_studentsBean;
+import com.student_admission.Interface.Application_Interface;
+import com.student_admission.Interface.Clgadmin_Interface;
+import com.student_admission.Interface.Selected_Interface;
 
 @EnableAutoConfiguration
 @Service

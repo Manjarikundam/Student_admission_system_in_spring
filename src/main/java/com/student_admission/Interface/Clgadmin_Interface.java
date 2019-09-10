@@ -1,10 +1,10 @@
-package com.example.demo.Interface;
+package com.student_admission.Interface;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.Bean.ClgadminBean;
+import com.student_admission.Bean.ClgadminBean;
 
 public interface Clgadmin_Interface extends JpaRepository<ClgadminBean, String>{
 

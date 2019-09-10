@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.*"%>
-<%@page import="com.example.demo.Bean.*"%>
+<%@page import="com.student_admission.Bean.*"%>
 <%@page import=" org.springframework.web.client.RestTemplate"%>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +24,17 @@ td {
 #f2 {
 	width: 400px;
 	height: 450px;
-	background-color: lightgrey;
+	background-color: rgb(84, 115, 117,0.7);
+}
+
+body {
+	padding-left: 700px;
+	padding-top: 50px;
+	padding-bottom: 90px;
+	background-image:
+		url("https://www.thoughtco.com/thmb/JBypVycd1rBteuuRf-qFkUO-jVQ=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/173253837-56a18f0c5f9b58b7d0c0a855.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 </style>
 	<script>
@@ -66,20 +72,22 @@ td {
 						cbse
 						<input onclick="cbse()" type="radio" name="board" value="cbse">
 
-						<td>percentage:<input id="id4" type="text" name="percentage" required></td>
+						<td>percentage:<input id="id4" type="text" name="percentage"
+							required></td>
 						<td>gpa:<input id="id3" type="text" name="gpa" required></td>
 
 					</tr>
 
 					<tr>
-						<td>school_name:<input type="text" name="school_name" required></td>
+						<td>school_name:<input type="text" name="school_name"
+							required></td>
 						<td>Dept choice: <select name=dept_choice>
 								<option value="cse">CSE</option>
 								<option value="ece">ECE</option>
 								<option value="it">IT</option>
 								<option value="mech">MECH</option>
 						</select></td>
-						
+
 					</tr>
 					<tr>
 						<td>College_choice<select name="college_ch1">
@@ -89,7 +97,7 @@ td {
 									}
 								%>
 						</select></td>
-					
+
 						<td><input type="submit" value="APPLY"></td>
 					</tr>
 				</table>
