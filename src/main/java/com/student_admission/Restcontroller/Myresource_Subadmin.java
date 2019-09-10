@@ -1,4 +1,4 @@
-package com.example.demo.MyresourceRest;
+package com.student_admission.Restcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.Selected_studentsBean;
-import com.example.demo.DAO.SubadminDao;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.Selected_studentsBean;
+import com.student_admission.Repository.SubadminDao;
 
 @RestController
 @RequestMapping("/myresource_subadmin")

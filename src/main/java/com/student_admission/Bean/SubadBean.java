@@ -1,29 +1,17 @@
-package com.example.demo.Bean;
+package com.student_admission.Bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 @Component
 @Entity
-@Table(name="login")
-public class LoginBean {
+public class SubadBean {
 
 	@Id
 	private String name;
-	private  String password;
-	
-	private String role;
-	
-	
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
+	private String password;
+	private String clgcode;
 	public String getName() {
 		return name;
 	}
@@ -36,10 +24,17 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getClgcode() {
+		return clgcode;
+	}
+	public void setClgcode(String clgcode) {
+		this.clgcode = clgcode;
+	}
 	@Override
 	public String toString() {
-		return "Login [name=" + name + ", password=" + password + ", role=" + role + "]";
+		return "SubadBean [name=" + name + ", password=" + password + ", clgcode=" + clgcode + "]";
 	}
-
+	
+	
 	
 }

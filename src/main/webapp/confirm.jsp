@@ -1,29 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
-<%@page import="com.example.demo.Bean.*"%>
+<%@page import="com.student_admission.Bean.*"%>
 <%@page import=" org.springframework.web.client.RestTemplate"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List of Applicants</title>
+<title>Confirmation</title>
 </head>
 <style>
 body {
-	border-style: solid;
-	border-width: medium;
-	background-color: #95BFC0;
+	padding-left: 550px;
+	padding-top: 50px;
+	padding-bottom: 90px;
+	background-image:
+		url("https://www.thoughtco.com/thmb/JBypVycd1rBteuuRf-qFkUO-jVQ=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/173253837-56a18f0c5f9b58b7d0c0a855.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
 	text-align: center;
 	color: Tomato
 }
+#f2 {
+	width: 400px;
+	height: 350px;
+	background-color:lightgrey;
+}
 </style>
 <body>
-	<h1>List of Applicants</h1>
+<CENTER>
+		<fieldset id="f2">
+	<h1>Confirmation</h1>
 	<br>
 	<br>
 	<form>
@@ -40,8 +51,7 @@ h1 {
 			</thead>
 
 			<%
-				ArrayList<ApplicationBean> reviewlist = (ArrayList<ApplicationBean>) request
-						.getAttribute("confirm");
+				ArrayList<ApplicationBean> reviewlist = (ArrayList<ApplicationBean>) request.getAttribute("confirm");
 
 				for (ApplicationBean dept : reviewlist) {
 			%>
@@ -64,6 +74,7 @@ h1 {
 			%>
 
 		</table>
+		</CENTER>
 </body>
 </html>
 

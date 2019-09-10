@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.student_admission.Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.Bean.ClgadminBean;
+import com.student_admission.Bean.ClgadminBean;
 
 @Controller
 public class UniversityAdmin {

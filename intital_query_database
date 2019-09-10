@@ -1,0 +1,2 @@
+//insert inital value into login
+insert into login values("admin","123","admin");

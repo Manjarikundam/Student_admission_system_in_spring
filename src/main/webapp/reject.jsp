@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
-<%@page import="com.example.demo.Bean.*"%>
+<%@page import="com.student_admission.Bean.*"%>
 <%@page import=" org.springframework.web.client.RestTemplate"%>
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@ h1 {
 
 
 			<%
+			
 				ApplicationBean bean = (ApplicationBean) request.getSession().getAttribute("name");
 			%>
 			<tr>

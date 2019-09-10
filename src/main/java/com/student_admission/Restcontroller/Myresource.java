@@ -1,7 +1,6 @@
-package com.example.demo.MyresourceRest;
+package com.student_admission.Restcontroller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.LoginBean;
-import com.example.demo.DAO.LoginDao;
-import com.example.demo.Interface.Clgadmin_Interface;
-import com.example.demo.Interface.Login_Interface;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.LoginBean;
+import com.student_admission.Interface.Clgadmin_Interface;
+import com.student_admission.Interface.Login_Interface;
+import com.student_admission.Repository.LoginDao;
 
 @RestController
 @RequestMapping("/myresource")
@@ -33,9 +32,8 @@ public class Myresource {
 	// are sent to service method.
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(@RequestBody LoginBean loginbean) {
-		ArrayList<LoginBean> loginbean1 = (ArrayList<LoginBean>) logininterface.findAll();
-		String status = logindao.check(loginbean, loginbean1);
-		return status;
+		return logindao.check(loginbean);
+
 	}
 
 	// This method gets data from MainController to add a user and these rest calls

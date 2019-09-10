@@ -1,4 +1,4 @@
-package com.example.demo.Bean;
+package com.student_admission.Bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.student_admission.Controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.Selected_studentsBean;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.Selected_studentsBean;
 
 @Controller
 public class SubadminController {

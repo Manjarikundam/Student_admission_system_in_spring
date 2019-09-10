@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
-<%@page import="com.example.demo.Bean.*"%>
+<%@page import="com.student_admission.Bean.*"%>
 <%@page import=" org.springframework.web.client.RestTemplate"%>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ h1 {
 }
 </style>
 <body bgcolor="#a3a3a3">
-	<h1>RESULT</h1>
+	<h1>details of user</h1>
 	<br>
 	<br>
 	<form method="post">

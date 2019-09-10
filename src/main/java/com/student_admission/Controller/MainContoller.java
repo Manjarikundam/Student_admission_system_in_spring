@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.student_admission.Controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.Bean.ApplicationBean;
-import com.example.demo.Bean.LoginBean;
+import com.student_admission.Bean.ApplicationBean;
+import com.student_admission.Bean.LoginBean;
 
 @Controller
 public class MainContoller {
@@ -62,7 +62,8 @@ public class MainContoller {
 		// After this method gets executed it is forwarded to the
 		// Myresource(RestController) where rest calls are made.
 	@RequestMapping(value = "/index", method = RequestMethod.POST)
-	public String maincontroller(LoginBean loginbean, HttpServletRequest request, HttpServletResponse response) {
+	public String maincontroller(LoginBean loginbean, HttpServletRequest request, HttpServletResponse response,HttpSession session) {
+		session.setAttribute("name", loginbean.getName());
 		String url = "http://localhost:8180/myresource/insert";
 		RestTemplate rt = new RestTemplate();
 		String status = rt.postForObject(url, loginbean, String.class);
@@ -81,6 +82,8 @@ public class MainContoller {
 		else
 			return "redirect:index.jsp";
 	}
+	
+	
 
 	// This Method is called from the /index based on role(user) and this method is
 		// used to find the status and move according the status
@@ -100,12 +103,15 @@ public class MainContoller {
 		RestTemplate rt = new RestTemplate();
 		ApplicationBean employResponse = rt.postForObject(url, applicationbean, ApplicationBean.class);
 		session.setAttribute("name", employResponse);
+			
+		
 		if (employResponse.getStatus().equals("pending") || employResponse.getStatus().equals("accepted")) {
 			return "redirect:UserFunctions.jsp";
 		} else if (employResponse.getStatus().equals("rejected") && employResponse.getCount() < 2) {
 			return "redirect:reject.jsp";
 		} else if (employResponse.getStatus().equals("rejected") && employResponse.getCount() >= 2)
 			return "redirect:finalreject.jsp";
+		
 		else {
 			return "redirect:index.jsp";
 		}
